@@ -1,0 +1,8 @@
+# congigure ssh client so that you can connect to a server without typing password
+Host *
+	SendEnv LANG LC_*
+	HashKnownHosts yes
+	GSSAPIAuthentication yes
+	GSSAPIDelegation yes
+	IdentityFile ~/.ssh/school
+	passwordAuthentication no
