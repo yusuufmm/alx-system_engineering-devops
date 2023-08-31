@@ -11,13 +11,11 @@ sudo apt-get install -y nginx
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
 # Define the string for replacement
-string_for_replacement="server_name _;\\n\\trewrite ^\\/redirect_me https:\\/\\/www.blog.ehoneahobed.com permanent;"
+string_for_replacement="server_name _;\\n\\trewrite ^\\/redirect_me https:\\/\\/www.blog.yusuufmm.com permanent;"
 
 # Use sed to replace the string in the Nginx config
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
 # Restart Nginx service
 sudo service nginx restart
-
-echo "Nginx configuration completed. Visit http://your_server_ip/ to see the website."
 
