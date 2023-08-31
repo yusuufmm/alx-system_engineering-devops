@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #using puppet script to create or make changes our ssh configuration file
-file_line {'ect/ssh/ssh_config':
+file_line {'ect/ssh/ssh_cofig':
 		ensure => present,
 content =>"
 
