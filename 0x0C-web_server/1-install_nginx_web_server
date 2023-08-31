@@ -14,8 +14,7 @@ ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.html
 
 # Start Nginx service
-service nginx start
+service nginx -t
 
 # Display a message indicating successful installation
-echo "Nginx installed and configured. Visit http://your_server_ip/ to see the website."
-
+sudo service nginx restart
