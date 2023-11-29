@@ -1,53 +1,38 @@
-Web Stack Debugging Project 0 - "Give me a page!"
+# Web Stack Debugging 0 - Debugging Docker Container
 
-Hello and welcome to the Web Stack Debugging journey! In this project, we'll embark on a mission to revive Apache on a Docker container and have it happily greet us with a "Hello Holberton." Get ready for some debugging magic!
+Welcome to the world of debugging! In this project, we're on a mission to fix Apache in a Docker container. Our goal is to make it return a page with the greeting "Hello Holberton" when we query its root. Let's dive in!
 
-## Requirements 🛠️
+## Requirements
 
-- **Editors:** vi, vim, emacs
 - **Environment:** Ubuntu 14.04 LTS
-- **File Endings:** All files should end with a new line
-- **README.md:** A mandatory guide to your project
-- **Executable Scripts:** All Bash scripts must be executable
-- **Shellcheck:** Ensure your scripts pass Shellcheck without any errors
-- **Execution:** Bash scripts must run without error
-- **Shebang Line:** The first line of your Bash scripts should be exactly `#!/usr/bin/env bash`
-- **Script Comment:** The second line of your Bash scripts should be a comment explaining the script's purpose
+- **Allowed Editors:** vi, vim, emacs
+- **File Endings:** Ensure all files end with a new line.
+- **README.md:** Mandatory guide to the project.
+- **Executable Scripts:** All Bash scripts must be executable.
+- **Shellcheck:** Scripts should pass Shellcheck without errors.
+- **Shebang Line:** Start Bash scripts with `#!/usr/bin/env bash`.
+- **Script Comment:** Add a comment on the second line explaining the script's purpose.
 
-## Task 0: Give me a page! 🚀
+## Tasks
 
-In this inaugural debugging mission, we'll tackle the challenge of making Apache run on a Docker container and respond with a delightful "Hello Holberton" when queried at its root.
+### 0. Give me a page!
 
-### Example:
+#### Objective
+Make Apache run on a Docker container and return a page containing "Hello Holberton" when querying its root.
 
-1. Launch the Docker container:
+#### Steps
+1. Launch the Docker container using the provided image: `holbertonschool/265-0`.
+2. Map port 8080 on the host to port 80 on the container.
+3. Run the container in detached mode.
+4. Diagnose the issue by checking the container's status (`docker ps`) and using `curl` to query the container at `0:8080`.
+5. Debug inside the container using `docker exec -it <container_id> /bin/bash`.
+6. Fix whatever is preventing Apache from working.
+7. Test the fix using `curl`.
 
-    ```bash
-    docker run -p 8080:80 -d -it holbertonschool/265-0
-    ```
+#### Submission
+Provide the commands used to fix the issue in the answer file. Share your wisdom by updating the README.md in your GitHub repository.
 
-2. Confirm the container is ready:
+## Let's Get Debugging!
+Your mission, should you choose to accept it, is to debug and conquer! 🚀
 
-    ```bash
-    docker ps
-    ```
-
-3. Curl the port 8080 and encounter the dreaded `curl: (52) Empty reply from server` error.
-
-4. Dive into the container for hands-on debugging:
-
-    ```bash
-    docker exec -it <container_id> /bin/bash
-    ```
-
-5. Work your magic within the container. Fix whatever needs fixing to bring back the warm "Hello Holberton."
-
-6. Test your superhero fixes:
-
-    ```bash
-    curl 0:8080
-    ```
-
-    Now, it should greet you warmly!
-
-## Share Your Wisdom 🌟
+**By:** YUSUF MM
