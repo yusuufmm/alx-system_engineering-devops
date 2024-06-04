@@ -2,7 +2,6 @@
 # Configures a new ubuntu machine by installing
 # Nginx where it should be listening on port 80
 
-
 echo -e "Updating and installing Nginx.\n"
 sudo apt-get update -y -qq && \
          sudo apt-get install nginx -y
