@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-    This module contains the function top_ten to fetch top posts from a subreddit.
+    This module contains the function top_ten to fetch top posts
 '''
 import requests
 from sys import argv
