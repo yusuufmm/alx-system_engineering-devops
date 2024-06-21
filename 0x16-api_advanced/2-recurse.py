@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Contains recurse function"""
+""" recurse function"""
 import requests
 
 
@@ -28,4 +28,4 @@ v1.0.0 (by /u/firdaus_cartoon_jr)"
 
     if after is not None:
         return recurse(subreddit, hot_list, after, count)  # Recursive call
-    return hot_list  # Return list of titles
+    return hot_list
