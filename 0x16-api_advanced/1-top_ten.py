@@ -1,17 +1,13 @@
 #!/usr/bin/python3
 '''
-    This module contains the function top_ten to fetch top posts
-'''
+    This module contains the function top_ten to fetch top posts'''
 import requests
 from sys import argv
 
 
 def top_ten(subreddit):
     '''
-    Function to retrieve the top ten posts for a specified subreddit.
-
-    Args:
-    - subreddit (str): The name of the subreddit.
+    Function to retrieve the top ten posts for a specified subred
 '''
     user = {'User-Agent': 'Lizzie'}
     url = requests.get('https://www.reddit.com/r/{}/hot/.json?limit=10'
@@ -25,4 +21,3 @@ def top_ten(subreddit):
 
 if __name__ == "__main__":
     top_ten(argv[1])
-
