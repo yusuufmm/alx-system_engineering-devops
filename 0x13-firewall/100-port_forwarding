@@ -1,0 +1,26 @@
+# Enable IP forwarding
+sudo nano /etc/ufw/sysctl.conf
+# Uncomment or add this  line
+net/ipv4/ip_forward=1
+
+# Edit UFW before.rules
+sudo nano /etc/ufw/before.rules
+
+# Add the port forwarding rules
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT
+
+# Reload UFW
+sudo ufw disable
+sudo ufw enable
+
+# Allow necessary ports
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 8080/tcp
+
+# Check UFW status
+sudo ufw status
