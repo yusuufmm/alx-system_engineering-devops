@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# To Find the PID(s) of running Gunicorn processes
+PIDS=$(pgrep gunicorn)
+
+# Print current process information
+echo "Current Gunicorn processes:"
+ps aux | grep gunicorn
+
+# Gracefully reload Gunicorn by sending SIGHUP to each PID
+for PID in $PIDS
+do
+    echo "Reloading Gunicorn process with PID $PID..."
+    kill -s HUP $PID
+done
+
+# Print updated process information
+echo "Updated Gunicorn processes:"
+ps aux | grep gunicorn
